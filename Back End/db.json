@@ -1,0 +1,39 @@
+{
+    "employees":[
+        {
+            "id":"EMP_KaYVb",
+            "empId":"EMP_KaYVb",
+            "nic":"12345V",
+            "firstName":"Raju",
+            "lastName":"Bai",
+            "dob":"2024-09-02",
+            "doj":"2024-09-01"
+        }
+    ],
+    "users":[
+        {
+            "id":"EMP_KaYVb",
+            "empId":"EMP_KaYVb",
+            "username":"pwd123",
+            "role":"employee"
+        }
+    ],
+    "leaveRequests":[
+        {
+            "id":1,
+            "employeeId":"EMP_KaYVb",
+            "reason":"picnic",
+            "dateFrom":"2024-09-12",
+            "numOfDays":4
+            
+        },
+        {
+          "id":2,
+            "employeeId":"EMP_KaYVb",
+            "reason":"sick",
+            "dateFrom":"2024-09-12",
+            "numOfDays":2
+        }
+    ]
+    
+}
