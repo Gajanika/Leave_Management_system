@@ -250,4 +250,56 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Initialize
   fetchEmployees();
   fetchUsers();
+
+  const employeeData = []; // Example data array; replace with actual data retrieval logic
+  let currentPage = 1;
+  const recordsPerPage = 5; // Number of employees per page
+
+  // Function to display employees on the current page
+  function displayEmployees() {
+    const start = (currentPage - 1) * recordsPerPage;
+    const end = start + recordsPerPage;
+    const paginatedEmployees = employeeData.slice(start, end);
+
+    const tableBody = document.getElementById("employeeTableBody");
+    tableBody.innerHTML = "";
+
+    paginatedEmployees.forEach((employee) => {
+      const row = `<tr>
+      <td>${employee.empId}</td>
+      <td>${employee.nic}</td>
+      <td>${employee.firstName}</td>
+      <td>${employee.dob}</td>
+      <td><button onclick="editEmployee(${employee.empId})">Edit</button></td>
+    </tr>`;
+      tableBody.insertAdjacentHTML("beforeend", row);
+    });
+
+    document.getElementById(
+      "pageInfo"
+    ).innerText = `Page ${currentPage} of ${Math.ceil(
+      employeeData.length / recordsPerPage
+    )}`;
+  }
+
+  // Go to the previous page
+  function prevPage() {
+    if (currentPage > 1) {
+      currentPage--;
+      displayEmployees();
+    }
+  }
+
+  // Go to the next page
+  function nextPage() {
+    if (currentPage < Math.ceil(employeeData.length / recordsPerPage)) {
+      currentPage++;
+      displayEmployees();
+    }
+  }
+
+  // Initialize display on page load
+  window.onload = () => {
+    displayEmployees();
+  };
 });
