@@ -1,23 +1,14 @@
 {
   "employees": [
-    {
-      "id": "EMP_KaYVb",
-      "employeeId": "EMP_KaYNb",
-      "nic": "12345V",
-      "firstName": "Raju",
-      "lastName": "Bai",
-      "dob": "2024-09-02",
-      "doj": "2024-09-01"
-    },
-    {
-      "id": "EMP_Dy4kP",
-      "employeeId": "EMP_Dy4kP",
-      "nic": "92312212V",
-      "firstName": "Jerobert",
-      "lastName": "zachariah",
-      "dob": "2015-01-06",
-      "doj": "2024-09-03"
-    },
+   {
+    "id":"Emp_Dy4kp",
+    "employeeId":"Emp_Dy4kp",   
+    "nic":"92312212V",
+    "firstName":"Jerobert",
+    "lastName":"zachariah",
+    "dob":"1972-01-06",
+    "doj":"2024-09-03"
+     },
     {
       "id": "EMP_4SK8Q",
       "employeeId": "EMP_4SK8Q",
@@ -26,24 +17,15 @@
       "lastName": "Mandella",
       "dob": "1972-12-05",
       "doj": "2024-09-01"
-    },
-    {
-      "id": "EMP_8ryyj",
-      "employeeId": "EMP_8ryyj",
-      "nic": "200357100529",
-      "firstName": "Gajanika",
-      "lastName": "Gaju",
-      "dob": "2003-03-11",
-      "doj": "2024-04-01"
     }
   ],
   "users": [
-    {
-      "username": "EMP_Dy4kP",
-      "password": "pwd123",
-      "role": "Admin",
-      "employeeId": "EMP_Dy4kP",
-      "id": "EMP_Dy4kP"
+   {
+    "id":"Emp_Dy4kp",
+      "employeeId":"Emp_Dy4kp",
+      "username":"EMP_4SK8Q",
+      "password":"pwd123",
+      "role":"Employee"
     },
     {
       "id": "EMP_4SK8Q",
@@ -51,34 +33,7 @@
       "username": "EMP_4SK8Q",
       "password": "pwd123",
       "role": "Employee"
-    },
-    {
-      "id": "EMP_8ryyj",
-      "employeeId": "EMP_8ryyj",
-      "username": "EMP_8ryyj",
-      "password": "pwd123",
-      "role": "Employee"
     }
   ],
-  "leaveRequests": [
-    {
-      "id": "e491",
-      "reason": "trip",
-      "dateFrom": "2024-09-12",
-      "numOfDays": "2",
-      "applicationDate": "2024-09-06",
-      "status": "Approved",
-      "processedDate": "2024-09-05"
-    },
-    {
-      "id": "a86b",
-      "reason": "party",
-      "dateFrom": "2024-09-17",
-      "numOfDays": "1",
-      "applicationDate": "2024-09-06",
-      "status": "Rejected",
-      "processedDate": "2024-09-05",
-      "rejectionReason": "cant allow"
-    }
-  ]
+  "leaveRequests": []
 }
