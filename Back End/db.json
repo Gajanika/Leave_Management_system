@@ -1,14 +1,14 @@
 {
   "employees": [
-   {
-    "id":"Emp_Dy4kp",
-    "employeeId":"Emp_Dy4kp",   
-    "nic":"92312212V",
-    "firstName":"Jerobert",
-    "lastName":"zachariah",
-    "dob":"1972-01-06",
-    "doj":"2024-09-03"
-     },
+    {
+      "id": "Emp_Dy4kp",
+      "employeeId": "Emp_Dy4kp",
+      "nic": "92312212V",
+      "firstName": "Jerobert",
+      "lastName": "zachariah",
+      "dob": "1972-01-06",
+      "doj": "2024-09-03"
+    },
     {
       "id": "EMP_4SK8Q",
       "employeeId": "EMP_4SK8Q",
@@ -20,19 +20,19 @@
     }
   ],
   "users": [
-   {
-    "id":"Emp_Dy4kp",
-      "employeeId":"Emp_Dy4kp",
-      "username":"EMP_4SK8Q",
-      "password":"pwd123",
-      "role":"Employee"
+    {
+      "username": "Emp_Dy4kp",
+      "password": "pwd123",
+      "role": "Employee",
+      "employeeId": "Emp_Dy4kp",
+      "id": "Emp_Dy4kp"
     },
     {
-      "id": "EMP_4SK8Q",
-      "employeeId": "EMP_4SK8Q",
       "username": "EMP_4SK8Q",
       "password": "pwd123",
-      "role": "Employee"
+      "role": "Employee",
+      "employeeId": "EMP_4SK8Q",
+      "id": "EMP_4SK8Q"
     }
   ],
   "leaveRequests": []
