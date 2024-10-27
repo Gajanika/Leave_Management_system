@@ -3,14 +3,12 @@
     padding: 0;
 }
 
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
     background-color: #f4f4f4;
 }
-
 
 .container {
     max-width: 1000px;
@@ -20,18 +18,15 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-
 .flex-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-
 h1 {
     text-align: center;
 }
-
 
 #searchInput {
     width: 100%;
@@ -40,13 +35,11 @@ h1 {
     box-sizing: border-box;
 }
 
-
 #employeeTable {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
 }
-
 
 #employeeTable th,
 #employeeTable td {
@@ -54,31 +47,26 @@ h1 {
     padding: 8px;
 }
 
-
 #employeeTable th {
     background-color: #f2f2f2;
     text-align: left;
 }
 
-
 #employeeTable tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-
 button {
     padding: 10px 20px;
-    background-color:brown;
+    background-color: brown;
     color: white;
     border: none;
     cursor: pointer;
 }
 
-
 button:hover {
-    background-color: burlywood;
+    background-color:brown;
 }
-
 
 .modal {
     display: none;
@@ -92,7 +80,6 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-
 .modal-content {
     background-color: white;
     margin: auto;
@@ -102,7 +89,6 @@ button:hover {
     box-sizing: border-box;
 }
 
-
 .close {
     color: #aaa;
     float: right;
@@ -110,14 +96,12 @@ button:hover {
     font-weight: bold;
 }
 
-
 .close:hover,
 .close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
-
 
 .toast {
     visibility: hidden;
@@ -135,12 +119,10 @@ button:hover {
     font-size: 17px;
 }
 
-
 .toast.show {
     visibility: visible;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
-
 
 @keyframes fadein {
     from {
@@ -148,20 +130,17 @@ button:hover {
         opacity: 0;
     }
 
-
     to {
         bottom: 30px;
         opacity: 1;
     }
 }
 
-
 @keyframes fadeout {
     from {
         bottom: 30px;
         opacity: 1;
     }
-
 
     to {
         bottom: 0;
