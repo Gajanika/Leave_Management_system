@@ -35,5 +35,83 @@
       "id": "EMP_4SK8Q"
     }
   ],
-  "leaveRequests": []
+  "leaveRequests": [
+    {
+      "id": "d452",
+      "employeeId": "Emp_Dy4kp",
+      "reason": "trip",
+      "dateFrom": "2024-10-22",
+      "numOfDays": "2",
+      "applicationDate": "2024-10-01",
+      "status": "Approved",
+      "employee": {
+        "id": "Emp_Dy4kp",
+        "employeeId": "Emp_Dy4kp",
+        "nic": "92312212V",
+        "firstName": "Jerobert",
+        "lastName": "zachariah",
+        "dob": "1972-01-06",
+        "doj": "2024-09-03"
+      },
+      "processedDate": "2024-10-28"
+    },
+    {
+      "id": "e138",
+      "employeeId": "EMP_4SK8Q",
+      "reason": "party",
+      "dateFrom": "2024-10-21",
+      "numOfDays": "2",
+      "applicationDate": "2024-10-09",
+      "status": "Rejected",
+      "employee": {
+        "id": "EMP_4SK8Q",
+        "employeeId": "EMP_4SK8Q",
+        "nic": "723451278V",
+        "firstName": "Nelson",
+        "lastName": "Mandella",
+        "dob": "1972-12-05",
+        "doj": "2024-09-01"
+      },
+      "processedDate": "2024-10-28",
+      "rejectionReason": "work\n"
+    },
+    {
+      "id": "0c34",
+      "employeeId": "Emp_Dy4kp",
+      "reason": "function",
+      "dateFrom": "2024-10-03",
+      "numOfDays": "1",
+      "applicationDate": "2024-10-02",
+      "status": "Rejected",
+      "employee": {
+        "id": "Emp_Dy4kp",
+        "employeeId": "Emp_Dy4kp",
+        "nic": "92312212V",
+        "firstName": "Jerobert",
+        "lastName": "zachariah",
+        "dob": "1972-01-06",
+        "doj": "2024-09-03"
+      },
+      "processedDate": "2024-10-28",
+      "rejectionReason": "heavy work\n"
+    },
+    {
+      "id": "99ff",
+      "employeeId": "EMP_4SK8Q",
+      "reason": "hi",
+      "dateFrom": "2024-10-03",
+      "numOfDays": "1",
+      "applicationDate": "2024-10-02",
+      "status": "Pending"
+    },
+    {
+      "id": "0c73",
+      "employeeId": "Emp_Dy4kp",
+      "reason": "bye",
+      "dateFrom": "2024-10-23",
+      "numOfDays": "2",
+      "applicationDate": "2024-10-22",
+      "status": "Pending"
+    }
+  ]
 }
