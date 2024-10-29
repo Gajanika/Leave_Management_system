@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async function() {
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
-
+       console.log("logged In User:",loggedInUser);
 
     if (!loggedInUser) {
         alert('You must log in first!');
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             applicationDate, // Use the selected application date
             status: 'Pending' // Initial status
         };
-
+console.log("newLeaveRequest:",newLeaveRequest);
         try {
             const response = await fetch('http://localhost:3000/leaveRequests', {
                 method: 'POST',
