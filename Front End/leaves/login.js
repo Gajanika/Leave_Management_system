@@ -33,7 +33,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
                 localStorage.setItem('loggedInUser', JSON.stringify(loggedInUser));
 
                 alert('Login successful!');
-                window.location.href = 'leaveRequest.html';
+               window.location.href = 'leaveRequest.html';
             } else {
                 alert('Employee data not found.');
             }

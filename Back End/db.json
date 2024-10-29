@@ -74,6 +74,24 @@
       "numOfDays": "2",
       "applicationDate": "2024-10-22",
       "status": "Pending"
+    },
+    {
+      "id": "8dfd",
+      "employeeId": "EMP_4SK8Q",
+      "reason": "sick",
+      "dateFrom": "2024-10-30",
+      "numOfDays": "2",
+      "applicationDate": "2024-10-07",
+      "status": "Pending"
+    },
+    {
+      "id": "fb5b",
+      "employeeId": "EMP_4SK8Q",
+      "reason": "test",
+      "dateFrom": "2024-10-31",
+      "numOfDays": "2",
+      "applicationDate": "2024-10-02",
+      "status": "Pending"
     }
   ]
 }
