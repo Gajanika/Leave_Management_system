@@ -1,0 +1,97 @@
+{
+    "employees": [
+      {
+        "id": "Emp_Dy4kp",
+        "employeeId": "Emp_Dy4kp",
+        "nic": "92312212V",
+        "firstName": "Jerobert",
+        "lastName": "zachariah",
+        "dob": "1972-01-06",
+        "doj": "2024-09-03"
+      },
+      {
+        "id": "EMP_4SK8Q",
+        "employeeId": "EMP_4SK8Q",
+        "nic": "723451278V",
+        "firstName": "Nelson",
+        "lastName": "Mandella",
+        "dob": "1972-12-05",
+        "doj": "2024-09-01"
+      }
+    ],
+    "users": [
+      {
+        "username": "Emp_Dy4kp",
+        "password": "pwd123",
+        "role": "Employee",
+        "employeeId": "Emp_Dy4kp",
+        "id": "Emp_Dy4kp"
+      },
+      {
+        "username": "EMP_4SK8Q",
+        "password": "pwd123",
+        "role": "Employee",
+        "employeeId": "EMP_4SK8Q",
+        "id": "EMP_4SK8Q"
+      }
+    ],
+    "leaveRequests": [
+      {
+        "id": "e491",
+        "reason": "trip",
+        "employeeId": "Emp_Dy4kp",
+        "dateFrom": "2024-09-12",
+        "numOfDays": "2",
+        "applicationDate": "2024-09-06",
+        "status": "Approved",
+        "processedDate": "2024-09-05"
+      },
+      {
+        "id": "e492",
+        "reason": "tour",
+        "employeeId": "Emp_Dy4kp",
+        "dateFrom": "2024-09-12",
+        "numOfDays": "2",
+        "applicationDate": "2024-09-06",
+        "status": "Pending"
+      },
+      {
+        "id": "a86b",
+        "reason": "party",
+        "employeeId": "EMP_4SK8Q",
+        "dateFrom": "2024-09-17",
+        "numOfDays": "1",
+        "applicationDate": "2024-09-06",
+        "status": "Rejected",
+        "processedDate": "2024-09-05",
+        "rejectionReason": "cant allow"
+      },
+      {
+        "id": "2a9e",
+        "employeeId": "Emp_Dy4kp",
+        "reason": "party",
+        "dateFrom": "2024-10-28",
+        "numOfDays": "2",
+        "applicationDate": "2024-10-22",
+        "status": "Pending"
+      },
+      {
+        "id": "8dfd",
+        "employeeId": "EMP_4SK8Q",
+        "reason": "sick",
+        "dateFrom": "2024-10-30",
+        "numOfDays": "2",
+        "applicationDate": "2024-10-07",
+        "status": "Pending"
+      },
+      {
+        "id": "fb5b",
+        "employeeId": "EMP_4SK8Q",
+        "reason": "test",
+        "dateFrom": "2024-10-31",
+        "numOfDays": "2",
+        "applicationDate": "2024-10-02",
+        "status": "Pending"
+      } 
+    ]
+  }  
