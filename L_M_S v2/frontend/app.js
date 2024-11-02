@@ -5,6 +5,7 @@ async function renderPage(layoutFile, contentFile) {
     try {
         let layout = await fs.readFile(layoutFile, "utf8");
         let content = await fs.readFile(contentFile, "utf8");
+
         // Extract <style> block
         const styleStart = content.indexOf("<style>");
         const styleEnd = content.indexOf("</style>");
@@ -15,6 +16,8 @@ async function renderPage(layoutFile, contentFile) {
                 content.substring(0, styleStart) +
                 content.substring(styleEnd + "</style>".length);
         }
+
+
         // Extract <script> block
         const scriptStart = content.indexOf("<script>");
         const scriptEnd = content.indexOf("</script>");
@@ -38,7 +41,7 @@ async function renderPage(layoutFile, contentFile) {
 const server = http.createServer(async (req, res) => {
     // Handle static file requests
     if (req.url.startsWith("/static/")) {
-        const filePath = path.join(__dirname, req.url);
+        const filePath = path.join(__dirname, 'views', 'Home', 'index.html');
         try {
             const data = await fs.readFile(filePath);
             res.writeHead(200, { "Content-Type": getContentType(filePath) });
@@ -50,15 +53,17 @@ const server = http.createServer(async (req, res) => {
         }
     }
     // Handle HTML page requests
-    let filePath = "./views/Home/index.html";
-    let layout_use = "./layouts/layout_user.html";
+    let filePath = "./views/index.html";
+    let layout_use = "./layouts/layout_with_topnav.html";
     if (req.url === "/") {
-        filePath = "./views/Home/index.html";
+        filePath = "./views/index.html";
+        layout_use="./layouts/layout_with_topnav.html";
     } else if (req.url === "/about") {
-        filePath = "./views/about.html";
+        filePath = "./views/about.html"; 
+        layout_use="./layouts/layout_with_topnav.html";
     } else {
-        res.writeHead(404, { "Content-Type": "text/html" });
-        return res.end("<h1>404 Not Found</h1>");
+        res.writeHead(404, { "Content-Type": "text/html" }); 
+        return res.end("<h1>404 Not Found</h1>");  b 
     }
     try {
         let renderedPage = await renderPage(layout_use, filePath);
@@ -67,7 +72,7 @@ const server = http.createServer(async (req, res) => {
     } catch (err) {
         console.log(err);
         res.writeHead(500, { "Content-Type": "text/html" });
-        res.end("<h1>500 Internal Server Error</h1>");
+        res.end("<h1>500 Internal Server Error</h1>");    
     }
 });
 // Function to determine content type
