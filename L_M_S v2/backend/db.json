@@ -21,10 +21,10 @@
     {
       "id": "EMP_fCfGJ",
       "employeeId": "EMP_fCfGJ",
-      "nic": "1123",
+      "nic": "123456789",
       "firstName": "Gajanika",
       "lastName": "Gaju",
-      "dob": "2024-11-05",
+      "dob": "2003-03-11",
       "doj": "2024-11-22"
     },
     {
@@ -32,16 +32,16 @@
       "employeeId": "EMP_Ixu6w",
       "nic": "1123",
       "firstName": "Gajanika",
-      "lastName": "z",
+      "lastName": "G",
       "dob": "2024-10-30",
       "doj": "2024-11-27"
     },
     {
       "id": "EMP_kwLli",
       "employeeId": "EMP_kwLli",
-      "nic": "ew",
-      "firstName": "ew",
-      "lastName": "es",
+      "nic": "456789123",
+      "firstName": "thusi",
+      "lastName": "saru",
       "dob": "2024-11-05",
       "doj": "2024-11-14"
     }

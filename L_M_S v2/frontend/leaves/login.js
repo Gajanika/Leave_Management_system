@@ -6,19 +6,12 @@ document.getElementById('loginForm').addEventListener('submit', async function (
 
     try {
         // Fetch user data with embedded employee data
-
-        //http://localhost:3000/users?_embed=employee&username=EMP_L6Zae&password=pwd123
-
         const response = await fetch(`http://localhost:3000/users?username=${username}&password=${password}&_embed=employee`);
-
         const users = await response.json();
 
         if (users.length > 0) {
             const user = users[0];
-            // Find the associated employee data
             const employee = user.employee;
-
-            //console.log(employee);
 
             if (employee) {
                 // Store the logged-in user and employee details
@@ -29,26 +22,16 @@ document.getElementById('loginForm').addEventListener('submit', async function (
                     lastName: employee.lastName,
                     role: user.role
                 };
-
+                
                 localStorage.setItem('loggedInUser', JSON.stringify(loggedInUser));
-
                 alert('Login successful!');
-               window.location.href = 'leaveRequest.html';
 
-               if (user.role == 'Admin') {
-
-                window.location.href = 'leaveRequest.html';
-                alert('Login successful!');
-            } else if (user.role == 'Employee') {
-                window.location.href = 'managerLeaveRequest.html';
-
-            } else if (user.role == 'Manager') {
-                window.location.href = 'managerLeaveRequest.html';
-                alert('Login successful!');
-            }
-
-
-
+                // Redirect based on user role
+                if (user.role === 'Employee') {
+                    window.location.href = 'leaveRequest.html';
+                } else if (['Admin', 'Manager','Director'].includes(user.role)) {
+                    window.location.href = 'managerLeaveManagement.html';
+                }
             } else {
                 alert('Employee data not found.');
             }

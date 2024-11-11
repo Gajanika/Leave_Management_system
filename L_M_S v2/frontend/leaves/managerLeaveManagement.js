@@ -3,12 +3,11 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     if (!loggedInUser) {
         alert('You must log in first!');
+        
         window.location.href = 'login.html';
         return;
     }
-    if(loggedInUser.role == 'Employee'){
-        window.location.href = 'leaveRequest.html';
-    }
+   
 
     // Display welcome message
     const welcomeMessage = document.getElementById('welcomeMessage');
