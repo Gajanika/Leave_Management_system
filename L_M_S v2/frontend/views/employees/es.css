@@ -1,39 +1,59 @@
-
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: #e5e7eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
-    background: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .flex-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 h1 {
     text-align: center;
+    color: #1f2937;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
 #searchInput {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-bottom: 20px;
-    box-sizing: border-box;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+#searchInput:focus {
+    border-color:brown;
+    outline: none;
 }
 
 #employeeTable {
@@ -44,85 +64,96 @@ h1 {
 
 #employeeTable th,
 #employeeTable td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    border: 1px solid #e2e8f0;
+    padding: 12px;
+    text-align: left;
+    color: #374151;
 }
 
 #employeeTable th {
-    background-color: #f2f2f2;
-    text-align: left;
+    background-color: #f3f4f6;
+    font-weight: 600;
 }
 
 #employeeTable tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #f9fafb;
 }
 
 button {
     padding: 10px 20px;
     background-color: brown;
-    color: white;
+    color: #ffffff;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 5px; /* Adds spacing between buttons */
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
-    background-color:brown;
+    background-color: burlywood;
+    transform: scale(1.05);
 }
 
 .modal {
     display: none;
     position: fixed;
     z-index: 1;
-    padding-top: 100px;
+    padding-top: 60px;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(31, 41, 55, 0.8);
+    overflow: auto;
 }
 
 .modal-content {
-    background-color: white;
+    background-color: #ffffff;
     margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%;
-    box-sizing: border-box;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 60%;
+    max-width: 600px;
 }
 
 .close {
-    color: #aaa;
+    color: #9ca3af;
     float: right;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: #1f2937;
     text-decoration: none;
     cursor: pointer;
 }
 
 .toast {
     visibility: hidden;
-    min-width: 250px;
-    margin-left: -125px;
+    min-width: 280px;
     background-color: #333;
-    color: #fff;
+    color: #ffffff;
     text-align: center;
-    border-radius: 2px;
+    border-radius: 5px;
     padding: 16px;
     position: fixed;
     z-index: 1;
     left: 50%;
+    transform: translateX(-50%);
     bottom: 30px;
-    font-size: 17px;
+    font-size: 16px;
 }
 
 .toast.show {
     visibility: visible;
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 3s;
 }
 
 @keyframes fadein {
@@ -130,7 +161,6 @@ button:hover {
         bottom: 0;
         opacity: 0;
     }
-
     to {
         bottom: 30px;
         opacity: 1;
@@ -142,10 +172,8 @@ button:hover {
         bottom: 30px;
         opacity: 1;
     }
-
     to {
         bottom: 0;
         opacity: 0;
     }
 }
-

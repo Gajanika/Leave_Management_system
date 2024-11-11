@@ -5,93 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="es.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
+       body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: rgb(149, 79, 79);
-            padding: 15px;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(149, 79, 79);
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.navbar .company-name {
+           color: #fff;
+           text-decoration: none;
+           font-size: 1.5em;
+       }
+       .navbar .menu-item, .navbar .dropdown button {
+           color: #fff;
+           text-decoration: none;
+           margin-left: 15px;
+       }
 
-        .container {
-            margin-top: 80px;
-            /* Add top margin to avoid overlapping with the fixed navbar */
-        }
+.container {
+    margin-top: 80px; /* Add top margin to avoid overlapping with the fixed navbar */
+}
 
-        .company-name {
-            color: #fff;
-            font-size: 24px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+.company-name {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-        .navbar-right {
-            display: flex;
-            align-items: center;
-        }
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
 
-        .menu-item,
-        .dropbtn {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-        }
+.menu-item,
+.dropbtn {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
 
-        .menu-item:hover,
-        .dropbtn:hover {
-            background-color: #555;
-        }
+.menu-item:hover,
+.dropbtn:hover {
+    background-color: #555;
+}
 
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #fff;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
 
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            font-size: 16px;
-        }
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+}
 
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
-        }
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
-        .dropdown:hover .dropbtn {
-            background-color: #555;
-        }
+.dropdown:hover .dropbtn {
+    background-color: #555;
+}
 
+/* Flex container styling */
+.flex-container {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           margin-bottom: 15px;
+       }
+  /* Search input styling */
+  #searchInput {
+           margin-top: 10px;
+           width: 100%;
+           padding: 10px;
+           border-radius: 4px;
+           border: 1px solid #ccc;
+       }
+         /* Modal button styling */
+       #createEmployeeBtn {
+           padding: 10px 20px;
+           background-color:brown;
+           color: white;
+           border: none;
+           border-radius: 4px;
+           cursor: pointer;
+       }
     </style>
 </head>
 <body>
@@ -139,66 +174,66 @@ Name..." style="margin-top: 10px;">
         <!-- Toast Notification -->
         <div id="toast"></div>
         <!-- Employee Modal -->
-        <div id="employeeModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2 id="modalTitle">Add Employee</h2>
+        <div id="employeeModal" class="modal" style="display: none;">
+            <div class="modal-content" style="padding: 20px; border: 1px solid #ccc; background-color: #fff; max-width: 400px; margin: auto;">
+                <span class="close" style="float: right; font-size: 24px; cursor: pointer;">&times;</span>
+                <h2 id="modalTitle" style="font-size: 18px; margin-bottom: 10px;">Add Employee</h2>
                 <form id="employeeForm">
                     <input type="hidden" id="empId" name="empId">
-                    <div>
+                    <div style="margin-bottom: 10px;">
                         <label for="nic">NIC Number:</label>
-                        <input type="text" id="nic" name="nic" required>
+                        <input type="text" id="nic" name="nic" required style="width: 100%; padding: 8px;">
                     </div>
-                    <div>
+                    <div style="margin-bottom: 10px;">
                         <label for="firstName">First Name:</label>
-                        <input type="text" id="firstName" name="firstName" required>
+                        <input type="text" id="firstName" name="firstName" required style="width: 100%; padding: 8px;">
                     </div>
-                    <div>
+                    <div style="margin-bottom: 10px;">
                         <label for="lastName">Last Name:</label>
-                        <input type="text" id="lastName" name="lastName" required>
+                        <input type="text" id="lastName" name="lastName" required style="width: 100%; padding: 8px;">
                     </div>
-                    <div>
+                    <div style="margin-bottom: 10px;">
                         <label for="dob">Date of Birth:</label>
-                        <input type="date" id="dob" name="dob" required>
+                        <input type="date" id="dob" name="dob" required style="width: 100%; padding: 8px;">
                     </div>
-                    <div>
+                    <div style="margin-bottom: 10px;">
                         <label for="doj">Date of Joining:</label>
-                        <input type="date" id="doj" name="doj" required>
+                        <input type="date" id="doj" name="doj" required style="width: 100%; padding: 8px;">
                     </div>
-                    <button type="submit" id="saveButton">Save</button>
+                    <button type="submit" id="saveButton" style="width: 100%; padding: 10px; background-color: brown; color: white; border: none;">Save</button>
                 </form>
             </div>
         </div>
         <!-- Credentials Modal -->
-        <div id="credentialsModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Edit Credentials</h2>
-                <form id="credentialsForm">
-                    <input type="hidden" id="credentialsEmpId" name="empId">
-                    <div>
-                        <label for="username">Username:</label>
-                        <input type="text" id="username" name="username" disabled required>
-                    </div>
-                    <div>
-                        <label for="password">Password:</label>
-                        <input type="text" id="password" name="password" required>
-                    </div>
-                    <div>
-                        <label for="userrole">Role:</label>
-                        <select id="userrole" name="userrole">
-                            <option value="Employee">Employee</option>
-                            <option value="Manager">Manager</option>
-                            <option value="Admin">Admin</option>
-                            <option value="Director">Director</option>
-                        </select>
-                    </div>
-                    <button type="submit">Save Credentials</button>
-                </form>
+<div id="credentialsModal" class="modal" style="display: none;">
+    <div class="modal-content" style="padding: 20px; border: 1px solid #ccc; background-color: #fff; max-width: 400px; margin: auto;">
+        <span class="close" style="float: right; font-size: 24px; cursor: pointer;">&times;</span>
+        <h2 style="font-size: 18px; margin-bottom: 10px;">Edit Credentials</h2>
+        <form id="credentialsForm">
+            <input type="hidden" id="credentialsEmpId" name="empId">
+            <div style="margin-bottom: 10px;">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" disabled required style="width: 100%; padding: 8px;">
             </div>
-        </div>
+            <div style="margin-bottom: 10px;">
+                <label for="password">Password:</label>
+                <input type="text" id="password" name="password" required style="width: 100%; padding: 8px;">
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label for="userrole">Role:</label>
+                <select id="userrole" name="userrole" style="width: 100%; padding: 8px;">
+                    <option value="Employee">Employee</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Director">Director</option>
+                </select>
+            </div>
+            <button type="submit" style="width: 100%; padding: 10px; background-color: brown; color: white; border: none;">Save Credentials</button>
+        </form>
     </div>
+</div>
 
+        
     <script>
           document.addEventListener("DOMContentLoaded", async () => {
 
@@ -449,6 +484,18 @@ Credentials</button>
 fetchEmployees();
 fetchUsers();
 });
+
+ // Show and hide modal logic
+ document.querySelectorAll(".close").forEach(closeBtn => {
+        closeBtn.addEventListener("click", () => {
+            closeBtn.closest(".modal").style.display = "none";
+        });
+    });
+
+    // For demo purposes, to open the modal when testing
+    document.getElementById("createEmployeeBtn").onclick = () => {
+        document.getElementById("employeeModal").style.display = "flex";
+    };
 
     </script>
 </body>
