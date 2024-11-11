@@ -1,165 +1,111 @@
-<style>* {
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="es.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f4f4f4;
-}
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(149, 79, 79);
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
 
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+        .container {
+            margin-top: 80px;
+            /* Add top margin to avoid overlapping with the fixed navbar */
+        }
 
-.flex-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
+        .company-name {
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-h1 {
-    text-align: center;
-}
+        .navbar-right {
+            display: flex;
+            align-items: center;
+        }
 
-#searchInput {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-}
+        .menu-item,
+        .dropbtn {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
 
-#employeeTable {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
+        .menu-item:hover,
+        .dropbtn:hover {
+            background-color: #555;
+        }
 
-#employeeTable th,
-#employeeTable td {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
 
-#employeeTable th {
-    background-color: #f2f2f2;
-    text-align: left;
-}
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
 
-#employeeTable tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+        }
 
-button {
-    padding: 10px 20px;
-    background-color: brown;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
 
-button:hover {
-    background-color:brown;
-}
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
 
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-}
+        .dropdown:hover .dropbtn {
+            background-color: #555;
+        }
 
-.modal-content {
-    background-color: white;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%;
-    box-sizing: border-box;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.toast {
-    visibility: hidden;
-    min-width: 250px;
-    margin-left: -125px;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    border-radius: 2px;
-    padding: 16px;
-    position: fixed;
-    z-index: 1;
-    left: 50%;
-    bottom: 30px;
-    font-size: 17px;
-}
-
-.toast.show {
-    visibility: visible;
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-
-@keyframes fadein {
-    from {
-        bottom: 0;
-        opacity: 0;
-    }
-
-    to {
-        bottom: 30px;
-        opacity: 1;
-    }
-}
-
-@keyframes fadeout {
-    from {
-        bottom: 30px;
-        opacity: 1;
-    }
-
-    to {
-        bottom: 0;
-        opacity: 0;
-    }
-}
-
-</style>   
-<nav class="navbar">
+    </style>
+</head>
+<body>
+    <nav class="navbar">
         <div class="navbar-left">
             <a href="#" class="company-name">UnicomTIC</a>
         </div>
         <div class="navbar-right">
-            <a href="#" class="menu-item">Employee</a>
+            <a href="../employees/index.html" class="menu-item">Employee</a>
             <div class="dropdown">
                 <button class="dropbtn">Leave Management</button>
                 <div class="dropdown-content">
-                    <a href="#">Apply Leave</a>
-                    <a href="#">Manage Leave</a>
+                    <a href="../leaves/leaveRequest.html">Apply Leave</a>
+                    <a href="../leaves/managerLeaveManagement.html">Manage Leave</a>
                 </div>
             </div>
         </div>
@@ -252,8 +198,9 @@ Name..." style="margin-top: 10px;">
             </div>
         </div>
     </div>
+
     <script>
-        document.addEventListener("DOMContentLoaded", async () => {
+          document.addEventListener("DOMContentLoaded", async () => {
 
 const apiUrl = "http://localhost:3000/employees";
 const userApiUrl = "http://localhost:3000/users";
@@ -502,7 +449,9 @@ Credentials</button>
 fetchEmployees();
 fetchUsers();
 });
+
     </script>
 </body>
-
 </html>
+    
+      
