@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', async function () {
         window.location.href = 'login.html';
         return;
     }
+    if(loggedInUser.role == 'Employee'){
+        window.location.href = 'leaveRequest.html';
+    }
 
     // Display welcome message
     const welcomeMessage = document.getElementById('welcomeMessage');
